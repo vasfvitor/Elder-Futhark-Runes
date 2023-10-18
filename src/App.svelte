@@ -18,8 +18,9 @@
 </script>
 
 <main class=" h-full grow">
-
-  <header class="text-center mx-auto w-full py-8"><h1 class="runic">RUNAS NORDICAS</h1></header>
+  <header class="text-center mx-auto w-full text-5xl py-4">
+    <h1 class="norse">RUNAS NORDICAS</h1>
+  </header>
   <p>{idx}</p>
   <section class="container mx-auto min-h-[80vh]">
     {#if runas[idx]}
