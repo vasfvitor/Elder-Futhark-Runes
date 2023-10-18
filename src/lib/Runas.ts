@@ -1,4 +1,4 @@
-export interface Runa {
+export interface Runic {
   id: number;
   cla: string;
   foco: string;
@@ -11,17 +11,10 @@ export interface Runa {
   polaridade: string;
   ideograma: string;
   ideografia: string;
-  elemento:string;
+  elemento: string;
 }
 
-export interface Carta {
-  top: Runa["numero"];
-  left: Runa["fonetico"];
-  right: Runa["polaridade"];
-  center: Runa["ideograma"];
-}
-
-const FEHU: Runa = {
+const FEHU: Runic = {
   id: 1,
   cla: "Primeiro Ætt",
   nome: "FEHU",
@@ -33,11 +26,11 @@ const FEHU: Runa = {
   fonetico: "F",
   polaridade: "♀",
   ideograma: "ᚠ",
-  ideografia:"Chifres do gado",
-  elemento: "Terra"
+  ideografia: "Chifres do gado",
+  elemento: "Terra",
 };
 
-const uruz: Runa = {
+const uruz: Runic = {
   id: 2,
   cla: "Primeiro Ætt",
   foco: "Força, vitalidade. Poder idômito, teste de resistência, renovação, adaptação. Energia de cura, telúrica, associado a terra. Energia verde-esmeralda. Força-vital",
@@ -49,11 +42,11 @@ const uruz: Runa = {
   fonetico: "U",
   polaridade: "♂",
   regentes: "Auðumbla (Audhumbla) e Thor",
-  ideografia:"Chifres do auroque",
-  elemento: "Terra"
+  ideografia: "Chifres do auroque",
+  elemento: "Terra",
 };
 
-const thurisaz: Runa = {
+const thurisaz: Runic = {
   id: 3,
   numero: 3,
   foco: "Força cósmica direcionada para defesa ou destruição. Vida e Morte. Energia primordial. Remover Barreiras",
@@ -65,9 +58,12 @@ const thurisaz: Runa = {
   polaridade: "♂",
   cla: "Primeiro Ætt",
   regentes: "Thor",
-  ideografia:"Espinho da rosa / Martelo do Thor",
-  elemento: "Terra"
-
+  ideografia: "Espinho da rosa / Martelo do Thor",
+  elemento: "Terra",
 };
 
-export const runas: Runa[] = [FEHU, uruz, thurisaz];
+export const Runics: Runic[] = [FEHU, uruz, thurisaz];
+
+import { Runa } from "./R";
+
+const Runic1 = new Runa({ id: 1, nome: "Runic A", elemento: "" });
