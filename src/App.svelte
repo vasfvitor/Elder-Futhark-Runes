@@ -1,5 +1,5 @@
 <script lang="ts">
-  import Atropos from "./lib/Atropos.svelte";
+  import Runnn from "./lib/Runnn.svelte";
 </script>
 
 <main class=" h-full grow">
@@ -7,8 +7,8 @@
     <h1 class="norse">RUNAS NORDICAS</h1>
   </header>
 
-  <section class="container mx-auto min-h-[80vh]">
-    <Atropos />
+  <section class=" container mx-auto min-h-[80vh]">
+    <Runnn />
   </section>
 </main>
 <footer class="text-center bg-black font-black py-20">footer</footer>

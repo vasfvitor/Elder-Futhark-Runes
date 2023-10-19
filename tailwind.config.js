@@ -18,6 +18,7 @@ export default {
         gold: "#FFD700",
       },
       backgroundImage: {
+        frey: "url('/frey.svg')",
         knot: "url('/celtic.svg')",
         cross: "url('/crossceltic.svg')",
         "noise-w": "url('/noise-white.png')",
