@@ -2,12 +2,12 @@
   import Runnn from "./lib/Runnn.svelte";
 </script>
 
-<main class=" h-full grow">
+<main class="h-full grow">
   <header class="text-center mx-auto w-full text-5xl py-4">
     <h1 class="norse">RUNAS NORDICAS</h1>
   </header>
 
-  <section class=" container mx-auto min-h-[80vh]">
+  <section class="container mx-auto min-h-[80vh]">
     <Runnn />
   </section>
 </main>

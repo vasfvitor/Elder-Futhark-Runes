@@ -1,6 +1,6 @@
 <script lang="ts">
   import { blur } from "svelte/transition";
-  import type { Card } from "./Cartas";
+  import type { Card } from "../Cartas";
   export let over: boolean, runa: Card, idx: number;
 </script>
 
