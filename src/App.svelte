@@ -3,7 +3,9 @@
 </script>
 
 <main class="h-full grow">
-  <header class="text-center mx-auto w-full text-5xl py-4">
+  <header
+    class="bg-[#121212] text-blood text-center mx-auto w-full text-5xl py-4"
+  >
     <h1 class="norse">RUNAS NORDICAS</h1>
   </header>
 
@@ -11,7 +13,7 @@
     <Runnn />
   </section>
 </main>
-<footer class="text-center bg-black font-black py-20">footer</footer>
+<footer class="text-center bg-[#121212] font-black py-20">footer</footer>
 
 <style>
 </style>

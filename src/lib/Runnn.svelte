@@ -15,11 +15,11 @@
   function createAtropos() {
     return Atropos({
       el: ".runic-card-atropos",
-      activeOffset: 80,
-      shadowScale: 1.1,
+      activeOffset: 37,
+      shadowScale: 1.005,
 
-      rotateXMax: 20,
-      rotateYMax: 20,
+      rotateXMax: 7,
+      rotateYMax: 7,
 
       highlight: false,
       onEnter() {
@@ -59,9 +59,9 @@
     }
   }
 
-  import PrimeiroAett from "./PrimeiroAett.svelte";
-  import SegundoAett from "./SegundoAett.svelte";
-  import TerceiroAett from "./TerceiroAett.svelte";
+  import PrimeiroAett from "./aett/PrimeiroAett.svelte";
+  import SegundoAett from "./aett/SegundoAett.svelte";
+  import TerceiroAett from "./aett/TerceiroAett.svelte";
 </script>
 
 <div class="mx-auto justify-center w-full my-8 flex flex-row gap-8">
@@ -71,7 +71,7 @@
   >
 </div>
 
-<div class="justify-center flex flex-col-reverse w-full">
+<div class="  justify-center flex flex-col-reverse w-full">
   {#if idx >= 0 && idx < Runics.length}
     {#key idx}
       <div
