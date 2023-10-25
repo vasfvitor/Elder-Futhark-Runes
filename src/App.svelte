@@ -1,5 +1,5 @@
 <script lang="ts">
-  import Runnn from "./lib/Runnn.svelte";
+  import Runas from "./lib/Runas.svelte";
 </script>
 
 <main class="h-full grow">
@@ -10,7 +10,7 @@
   </header>
 
   <section class="container mx-auto min-h-[80vh]">
-    <Runnn />
+    <Runas />
   </section>
 </main>
 <footer class="text-center bg-[#121212] font-black py-20">footer</footer>

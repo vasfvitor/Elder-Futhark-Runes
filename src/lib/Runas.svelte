@@ -1,10 +1,16 @@
 <script lang="ts">
   import Atropos from "atropos";
   import "atropos/css";
-  import { Runics } from "./Runas";
-  import { Cards } from "./Cartas";
-  import { typewriter } from "./transition";
+  // import { Runics } from "./Runas";
+  import { Cards } from "./scripts/Cartas";
+  import { typewriter } from "./scripts/transition";
   import { onMount } from "svelte";
+
+  import PrimeiroAett from "./aett/PrimeiroAett.svelte";
+  import SegundoAett from "./aett/SegundoAett.svelte";
+  import TerceiroAett from "./aett/TerceiroAett.svelte";
+
+  const Runics = Cards;
 
   let atropo: any;
   let over = false;
@@ -15,8 +21,8 @@
   function createAtropos() {
     return Atropos({
       el: ".runic-card-atropos",
-      activeOffset: 37,
-      shadowScale: 1.005,
+      activeOffset: 25,
+      shadowScale: 0.85,
 
       rotateXMax: 7,
       rotateYMax: 7,
@@ -28,15 +34,28 @@
       onLeave() {
         over = false;
       },
-      onRotate(x, y) {
-        //console.log("Rotate", x, y);
-      },
+      onRotate(x, y) {},
     });
   }
   let idx = 0;
   let runic = false;
+  let urlParams = new URLSearchParams(window.location.search);
+  let url = new URL(window.location.href);
+
+  if (urlParams.has("runa")) {
+    idx = urlParams.entries().next().value[1] - 1;
+    // urlParams.forEach((entry) => {
+    //   console.log(entry);
+    // });
+  }
 
   function toRunic() {
+    if (urlParams.has("runa")) {
+      urlParams.set("runa", (idx - 1).toString());
+    } else {
+      urlParams.append("runa", (idx - 1).toString());
+    }
+
     atropo.destroy();
     runic = true;
 
@@ -52,22 +71,19 @@
       idx++;
     }
   }
+
   function showPrev() {
     if (idx > 0) {
       toRunic();
       idx--;
     }
   }
-
-  import PrimeiroAett from "./aett/PrimeiroAett.svelte";
-  import SegundoAett from "./aett/SegundoAett.svelte";
-  import TerceiroAett from "./aett/TerceiroAett.svelte";
 </script>
 
 <div class="mx-auto justify-center w-full my-8 flex flex-row gap-8">
-  <button on:click={showPrev} class:text-gray-800={idx == 0}>Prev</button>
-  <button on:click={showNext} class:text-gray-800={idx == Runics.length - 1}
-    >Next</button
+  <button on:click={showPrev} class:text-gray-800={idx === 0}>Anterior</button>
+  <button on:click={showNext} class:text-gray-800={idx === Runics.length - 1}
+    >Próxima</button
   >
 </div>
 
@@ -90,25 +106,31 @@
         <p in:typewriter={{ speed: 5 }}>
           {`Nome:${Runics[idx].id}`}
         </p>
-        <p in:typewriter={{ speed: 5 }}>
+        <!-- <p in:typewriter={{ speed: 5 }}>
           {`Nome:${Runics[idx].significado}`}
         </p>
         <p in:typewriter={{ speed: 5 }}>
           {`Nome:${Runics[idx].ideografia} - ${Runics[idx].ideograma}`}
-        </p>
+        </p> -->
       </div>
     {/key}
   {:else}
-    <p>No item found for index {idx}</p>
+    <p>Runa {idx + 1} não encontrada...</p>
+    <script>
+      setTimeout(() => {
+        window.location = "/";
+      }, 1000);
+    </script>
   {/if}
-
-  <div class="h-[26.25rem] w-full">
-    {#if Runics[idx].aett == 1}
-      <PrimeiroAett {idx} {over} runa={Cards[idx]} />
-    {:else if Runics[idx].aett == 2}
-      <SegundoAett {idx} {over} runa={Cards[idx]} />
-    {:else}
-      <TerceiroAett {idx} {over} runa={Cards[idx]} />
-    {/if}
-  </div>
+  {#if idx >= 0 && idx < Runics.length}
+    <div class="h-[26.25rem] w-full">
+      {#if Runics[idx].aett == 1}
+        <PrimeiroAett {idx} {over} runa={Cards[idx]} />
+      {:else if Runics[idx].aett == 2}
+        <SegundoAett {idx} {over} runa={Cards[idx]} />
+      {:else}
+        <TerceiroAett {idx} {over} runa={Cards[idx]} />
+      {/if}
+    </div>
+  {/if}
 </div>
