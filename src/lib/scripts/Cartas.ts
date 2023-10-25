@@ -6,6 +6,7 @@ export interface Card {
   fonetico: string;
   polaridade: "♂" | "♀" | "";
   ideograma: string;
+  fonte: string;
 }
 
 const FEHU_CARD: Card = {
@@ -16,6 +17,7 @@ const FEHU_CARD: Card = {
   fonetico: "F",
   polaridade: "♀",
   ideograma: "ᚠ",
+  fonte: "f",
 };
 
 const URUZ_CARD: Card = {
@@ -26,6 +28,7 @@ const URUZ_CARD: Card = {
   fonetico: "U",
   polaridade: "♂",
   ideograma: "ᚢ",
+  fonte: "u",
 };
 
 const THURISAZ_CARD: Card = {
@@ -34,11 +37,35 @@ const THURISAZ_CARD: Card = {
   numero: 13,
   nome: "THURISAZ",
   ideograma: "ᚦ",
-  fonetico: "TH",
+  fonetico: "Th",
   polaridade: "♂",
+  fonte: "",
 };
 
-export const Cards: Card[] = [FEHU_CARD, URUZ_CARD, THURISAZ_CARD];
+const ANSUZ_CARD: Card = {
+  id: 4,
+  aett: 1,
+  numero: 14,
+  nome: "ANSUZ",
+  ideograma: "ᚨ",
+  fonetico: "A",
+  polaridade: "♂",
+  fonte: "a",
+};
+
+const RAIDHO_CARD: Card = {
+  id: 5,
+  aett: 1,
+  numero: 14,
+  nome: "ANSUZ",
+  ideograma: "ᚨ",
+  fonetico: "A",
+  polaridade: "♂",
+  fonte: "a",
+};
+
+
+export const Cards: Card[] = [FEHU_CARD, URUZ_CARD, THURISAZ_CARD, ANSUZ_CARD, RAIDHO_CARD];
 
 `
 CORES: Dourado, vermelho-vivo
