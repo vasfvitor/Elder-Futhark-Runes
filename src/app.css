@@ -20,7 +20,9 @@
 
 @font-face {
   font-family: "Runes";
-  src: url("runes.ttf") format("truetype");
+  src: url("beowulf/BabelStoneRunicBeowulf.woff2") format("woff2"),
+    url("beowulf/BabelStoneRunicBeowulf.woff") format("woff"),
+    url("beowulf/BabelStoneRunicBeowulf.trf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
@@ -48,6 +50,7 @@
 .runic {
   font-family: "Runes";
 }
+
 .runic-moon {
   font-family: "Moon Runes" !important;
 }
