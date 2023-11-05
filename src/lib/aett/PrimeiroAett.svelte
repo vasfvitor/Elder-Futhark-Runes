@@ -35,7 +35,7 @@
             <p
               id="rune_text"
               class:active={over}
-              class="runic text-principal absolute inset-x-0 inset-y-16"
+              class="runic text-principal absolute inset-x-0 inset-y-[4.735rem]"
               data-atropos-offset="7"
             >
               {runa.ideograma}
@@ -83,12 +83,12 @@
 
 <style>
   .card-frame {
-    border-radius: 12px;
-    border-top: 4px groove var(--shadow-color);
-    border-bottom: 4px ridge var(--shadow-color);
+    border-radius: 7px;
+    border-top: 4px groove var(--runic-bg);
+    border-bottom: 4px ridge var(--runic-bg);
 
-    border-left: 4px inset var(--shadow-color);
-    border-right: 4px inset var(--shadow-color);
+    border-left: 7px inset var(--active-principal);
+    border-right: 7px outset var(--active-principal);
   }
 
   .border-groove {

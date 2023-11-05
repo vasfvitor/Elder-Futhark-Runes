@@ -6,7 +6,7 @@ export interface Card {
   fonetico: string;
   polaridade: "♂" | "♀" | "";
   ideograma: string;
-  fonte: string;
+
 }
 
 const FEHU_CARD: Card = {
@@ -17,7 +17,7 @@ const FEHU_CARD: Card = {
   fonetico: "F",
   polaridade: "♀",
   ideograma: "ᚠ",
-  fonte: "f",
+
 };
 
 const URUZ_CARD: Card = {
@@ -28,7 +28,7 @@ const URUZ_CARD: Card = {
   fonetico: "U",
   polaridade: "♂",
   ideograma: "ᚢ",
-  fonte: "u",
+
 };
 
 const THURISAZ_CARD: Card = {
@@ -39,7 +39,7 @@ const THURISAZ_CARD: Card = {
   ideograma: "ᚦ",
   fonetico: "Th",
   polaridade: "♂",
-  fonte: "",
+
 };
 
 const ANSUZ_CARD: Card = {
@@ -50,18 +50,18 @@ const ANSUZ_CARD: Card = {
   ideograma: "ᚨ",
   fonetico: "A",
   polaridade: "♂",
-  fonte: "a",
+
 };
 
 const RAIDHO_CARD: Card = {
   id: 5,
   aett: 1,
-  numero: 14,
+  numero: 15,
   nome: "ANSUZ",
   ideograma: "ᚨ",
   fonetico: "A",
   polaridade: "♂",
-  fonte: "a",
+
 };
 
 
