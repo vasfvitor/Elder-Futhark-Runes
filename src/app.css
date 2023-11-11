@@ -4,25 +4,25 @@
 
 @font-face {
   font-family: "Norse";
-  src: url("norse-webfont.woff2") format("woff2"),
-    url("norse-webfont.woff") format("woff");
+  src: url("/norse-webfont.woff2") format("woff2"),
+    url("/norse-webfont.woff") format("woff");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Norse";
-  src: url("norsebold-webfont.woff2") format("woff2"),
-    url("norsebold-webfont.woff") format("woff");
+  src: url("/norsebold-webfont.woff2") format("woff2"),
+    url("/norsebold-webfont.woff") format("woff");
   font-weight: bolder;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Runes";
-  src: url("beowulf/BabelStoneRunicBeowulf.woff2") format("woff2"),
-    url("beowulf/BabelStoneRunicBeowulf.woff") format("woff"),
-    url("beowulf/BabelStoneRunicBeowulf.trf") format("truetype");
+  src: url("/beowulf/BabelStoneRunicBeowulf.woff2") format("woff2"),
+    url("/beowulf/BabelStoneRunicBeowulf.woff") format("woff"),
+    url("/beowulf/BabelStoneRunicBeowulf.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
