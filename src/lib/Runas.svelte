@@ -2,7 +2,8 @@
   import Atropos from "atropos";
   import "atropos/css";
   // import { Runics } from "./Runas";
-  import { Cards } from "./scripts/Cartas";
+  // import { Cards } from "./scripts/Cartas";
+  import { RUNAS } from "./scripts/Cartas";
   import { typewriter } from "./scripts/transition";
   import { onMount } from "svelte";
 
@@ -10,7 +11,9 @@
   import SegundoAett from "./aett/SegundoAett.svelte";
   import TerceiroAett from "./aett/TerceiroAett.svelte";
 
-  const Runics = Cards;
+  // const Runics = Cards;
+
+  const Runics = RUNAS;
 
   let atropo: any;
   let over = false;
@@ -144,11 +147,11 @@
   {#if idx >= 0 && idx < Runics.length}
     <div class="h-[26.25rem] w-full">
       {#if Runics[idx].aett == 1}
-        <PrimeiroAett {idx} {over} runa={Cards[idx]} />
+        <PrimeiroAett {idx} {over} runa={Runics[idx]} />
       {:else if Runics[idx].aett == 2}
-        <SegundoAett {idx} {over} runa={Cards[idx]} />
+        <SegundoAett {idx} {over} runa={Runics[idx]} />
       {:else}
-        <TerceiroAett {idx} {over} runa={Cards[idx]} />
+        <TerceiroAett {idx} {over} runa={Runics[idx]} />
       {/if}
     </div>
   {/if}
