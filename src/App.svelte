@@ -13,7 +13,12 @@
     <Runas />
   </section>
 </main>
-<footer class="text-center bg-[#121212] font-black py-20">footer</footer>
+<footer class="text-center bg-[#121212] font-black py-20">
+  <a
+    class="hover:text-white p-4 rounded bg-gray-300 transition-all hover:bg-gray-800"
+    href="https://github.com/vasfvitor/Elder-Futhark-Runes">Star on GitHub</a
+  >
+</footer>
 
 <style>
 </style>
