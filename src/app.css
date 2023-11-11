@@ -20,9 +20,9 @@
 
 @font-face {
   font-family: "Runes";
-  src: url("/beowulf/BabelStoneRunicBeowulf.woff2") format("woff2"),
-    url("/beowulf/BabelStoneRunicBeowulf.woff") format("woff"),
-    url("/beowulf/BabelStoneRunicBeowulf.ttf") format("truetype");
+  src: url("/runic/BabelStoneRunicElderFuthark.woff2") format("woff2"),
+    url("/runic/BabelStoneRunicElderFuthark.woff") format("woff"),
+    url("/runic/BabelStoneRunicElderFuthark.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
