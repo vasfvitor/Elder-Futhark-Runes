@@ -1,6 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: ["./index.html", "./src/**/*.{svelte,js,ts,jsx,tsx}"],
+  content: ["./index.html", "./src/**/*.{svelte,js,ts,jsx,tsx}", './src/**/*.{html,js,svelte,ts}', './node_modules/flowbite-svelte/**/*.{html,js,svelte,ts}'],
+  darkMode: 'class',
   theme: {
     fontSize: {
       sm: '0.8rem',
@@ -16,16 +17,28 @@ export default {
       colors: {
         blood: "#AA0000",
         gold: "#FFD700",
-      },
-      backgroundImage: {
-        frey: "url('/frey.svg')",
-        knot: "url('/celtic.svg')",
-        cross: "url('/crossceltic.svg')",
-        "noise-w": "url('/noise-white.png')",
-        "noise-b": "url('/noise-black.png')",
+        // flowbite-svelte
+        primary: {
+          50: '#FFF5F2',
+          100: '#FFF1EE',
+          200: '#FFE4DE',
+          300: '#FFD5CC',
+          400: '#FFBCAD',
+          500: '#FE795D',
+          600: '#EF562F',
+          700: '#EB4F27',
+          800: '#CC4522',
+          900: '#A5371B'
+        },
+        backgroundImage: {
+          frey: "url('/frey.svg')",
+          knot: "url('/celtic.svg')",
+          cross: "url('/crossceltic.svg')",
+          "noise-w": "url('/noise-white.png')",
+          "noise-b": "url('/noise-black.png')",
+        },
       },
     },
-    
-  },
-  plugins: [],
+    plugins: [require('flowbite/plugin')],
+  }
 };
