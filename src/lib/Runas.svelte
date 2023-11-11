@@ -81,9 +81,9 @@
 </script>
 
 <div class="mx-auto justify-center w-full my-8 flex flex-row gap-8">
-  <button on:click={showPrev} class:text-gray-800={idx === 0}>Anterior</button>
-  <button on:click={showNext} class:text-gray-800={idx === Runics.length - 1}
-    >Próxima</button
+  <button on:click={showPrev} class="bg-gray-200 px-6 py-4 rounded hover:bg-gray-300 transition-all" class:text-gray-400={idx === 0}>ANTERIOR</button>
+  <button on:click={showNext} class="bg-gray-200 px-6 py-4 rounded hover:bg-gray-300 transition-all" class:text-gray-400={idx === Runics.length - 1}
+    >PRÓXIMA</button
   >
 </div>
 
