@@ -10,6 +10,8 @@
   import SegundoAett from "./aett/SegundoAett.svelte";
   import TerceiroAett from "./aett/TerceiroAett.svelte";
 
+  
+
   const Runics = Cards;
 
   let atropo: any;
@@ -78,13 +80,30 @@
       idx--;
     }
   }
+  import { ButtonGroup, GradientButton } from "flowbite-svelte";
+  import { AngleRightOutline, AngleLeftOutline } from "flowbite-svelte-icons";
 </script>
 
-<div class="mx-auto justify-center w-full my-8 flex flex-row gap-8">
-  <button on:click={showPrev} class="bg-gray-200 px-6 py-4 rounded hover:bg-gray-300 transition-all" class:text-gray-400={idx === 0}>ANTERIOR</button>
-  <button on:click={showNext} class="bg-gray-200 px-6 py-4 rounded hover:bg-gray-300 transition-all" class:text-gray-400={idx === Runics.length - 1}
-    >PRÓXIMA</button
-  >
+<div class="mx-auto justify-center my-8 flex">
+  <ButtonGroup>
+    <GradientButton
+      size="lg"
+      shadow
+      color="purpleToPink"
+      on:click={showPrev}
+      disabled={idx === 0}
+      ><AngleLeftOutline class="w-3 h-3 mr-2" />ANTERIOR</GradientButton
+    >
+
+    <GradientButton
+      size="lg"
+      shadow
+      color="purpleToPink"
+      on:click={showNext}
+      disabled={idx === Runics.length - 1}
+      >PRÓXIMA <AngleRightOutline class="w-3 h-3 ml-2" /></GradientButton
+    >
+  </ButtonGroup>
 </div>
 
 <div class="  justify-center flex flex-col-reverse w-full">
