@@ -191,8 +191,8 @@
   }
 
   .mask1 {
-    -webkit-mask-image: url(frame1.png);
-    mask-image: url(frame1.png);
+    -webkit-mask-image: url(/frame1.png);
+    mask-image: url(/frame1.png);
     -webkit-mask-repeat: no-repeat;
     mask-repeat: no-repeat;
     mask-size: cover;

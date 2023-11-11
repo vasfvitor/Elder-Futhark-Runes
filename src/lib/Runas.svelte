@@ -10,8 +10,6 @@
   import SegundoAett from "./aett/SegundoAett.svelte";
   import TerceiroAett from "./aett/TerceiroAett.svelte";
 
-  
-
   const Runics = Cards;
 
   let atropo: any;
@@ -80,7 +78,9 @@
       idx--;
     }
   }
-  import { ButtonGroup, GradientButton } from "flowbite-svelte";
+  import ButtonGroup from "flowbite-svelte/ButtonGroup.svelte";
+  import GradientButton from "flowbite-svelte/GradientButton.svelte";
+
   import { AngleRightOutline, AngleLeftOutline } from "flowbite-svelte-icons";
 </script>
 

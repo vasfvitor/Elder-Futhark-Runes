@@ -1,7 +1,8 @@
 <script lang="ts">
   import Runas from "./lib/Runas.svelte";
 
-  import { Toast, Button } from "flowbite-svelte";
+  import Toast from "flowbite-svelte/Toast.svelte";
+  import Button from "flowbite-svelte/Button.svelte";
   import { Badge } from "flowbite-svelte";
   import { InfoCircleOutline, StarSolid } from "flowbite-svelte-icons";
 </script>
