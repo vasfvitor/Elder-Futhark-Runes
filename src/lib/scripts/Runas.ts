@@ -12,7 +12,7 @@ export const Aett = {
     "O terceiro Ætt, regido por Tyr e Ziza (divindades arcáicas), rege os aspectos mentais e espirituais e mostra os níveis nos quais o iniciado deve trabalhar para tornar-se auto-suficiente e alcançar a iluminação.",
 };
 
-import { Runa } from "./R";
+import { Runa } from "./RunasClass";
 
 const FEHU = new Runa({
   id: 1,
