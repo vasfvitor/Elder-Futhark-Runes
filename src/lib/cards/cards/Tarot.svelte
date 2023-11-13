@@ -17,8 +17,7 @@
 
   // image props
   export let img = "";
-  export let back =
-    "https://tcg.pokemon.com/assets/img/global/tcg-card-back-2x.jpg";
+
   export let foil = "";
   export let mask = "";
 
@@ -37,7 +36,6 @@
 
   let isTrainerGallery = true;
 
-  let back_img = back;
   let front_img = "";
   //let img_base = img.startsWith("http") ? "" : "https://images.pokemontcg.io/";
 
@@ -46,7 +44,6 @@
 
   let active = false;
   let interacting = false;
-  //let firstPop = true;
   let loading = true;
   let isVisible = document.visibilityState === "visible";
 
@@ -189,14 +186,7 @@
     let scaleH = (window.innerHeight / rect.height) * 0.9;
     let scaleF = 1.75;
     setCenter();
-    // if (firstPop) {
-    //   delay = 1000;
-    //   springRotateDelta.set({
-    //     x: 360,
-    //     y: 0,
-    //   });
-    // }
-    // firstPop = false;
+
     springScale.set(Math.min(scaleW, scaleH, scaleF));
     interactEnd(null, delay);
   };
@@ -227,6 +217,7 @@
   }
 
   let foilStyles = ``;
+  
   const staticStyles = `
     --seedx: ${randomSeed.x};
     --seedy: ${randomSeed.y};
@@ -385,7 +376,7 @@
 <svelte:window on:scroll={reposition} />
 
 <div
-  class="card {types} / interactive /"
+  class="card {types} / interactive / tarot"
   class:active
   class:interacting
   class:loading
@@ -409,22 +400,14 @@
       aria-label="Expand the XX Card; {name}."
       tabindex="0"
     >
-      <img
-        class="card__back"
-        src={back_img}
-        alt="The back of a XX Card, a Pokeball in the center with Pokemon logo above and below"
-        loading="lazy"
-        width="660"
-        height="921"
-      />
       <div class="card__front" style={staticStyles + foilStyles}>
         <img
           src={front_img}
           alt="Front design of the {name} Card, with the stats and info around the edge"
           on:load={imageLoader}
           loading="lazy"
-          width="660"
-          height="921"
+          width="700"
+          height="1200"
         />
         <div class="card__shine" />
         <div class="card__glare" />

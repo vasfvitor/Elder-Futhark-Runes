@@ -19,28 +19,13 @@
 
   export let showcase = false;
 
-  function isDefined(v) {
-    return typeof v !== "undefined" && v !== null;
-  }
-
-  function cardImage() {
-    if (isDefined(img)) {
-      return img;
-    }
-    if (isDefined(set) && isDefined(number)) {
-      return `https://images.pokemontcg.io/${set.toLowerCase()}/${number}_hires.png`;
-    }
-    return "";
-  }
-  
   const proxy = {
-    img: cardImage(),
+    img,
     back,
-    foil: "", // get from cdn
-    mask: "", // get from cdn
-
-    id,
-    name,
+    foil, // get from cdn
+    mask, // get from cdn
+    id: 0,
+    name: "",
     number,
     set,
     types,
