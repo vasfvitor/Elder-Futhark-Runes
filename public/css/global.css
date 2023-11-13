@@ -1,6 +1,6 @@
 :root {
   --primary: hsl(187, 85%, 60%);
-  --link-hover: hsl(207, 100%, 94%)
+  --link-hover: hsl(207, 100%, 94%);
 }
 
 * {
@@ -136,7 +136,7 @@ h3 a:before {
   width: 1em;
   height: 1em;
   opacity: 0;
-  transition: all 0.5s cubic-bezier(.55,.06,.68,.19);
+  transition: all 0.5s cubic-bezier(0.55, 0.06, 0.68, 0.19);
 }
 
 h1 a:hover:before,
@@ -148,7 +148,7 @@ h3:target a:before {
   content: "⚓";
   transform: translate(-200%, -5px);
   opacity: 1;
-  transition: all 0.5s cubic-bezier(.22,.61,.36,1);
+  transition: all 0.5s cubic-bezier(0.22, 0.61, 0.36, 1);
 }
 
 h2 + p,
@@ -187,7 +187,7 @@ mark {
   position: fixed;
   bottom: 1em;
   right: 1em;
-  padding: .5em 1em;
+  padding: 0.5em 1em;
   border-radius: 5em;
   background: var(--primary);
   color: hsl(192, 87%, 15%);

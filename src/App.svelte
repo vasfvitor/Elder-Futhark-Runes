@@ -6,26 +6,31 @@
   import { InfoCircleOutline, StarSolid } from "flowbite-svelte-icons";
 
   import CardList from "./lib/cards/Cards.svelte";
-  import Card from "./lib/cards/cards/CardProxy.svelte";
+  //import Card from "./lib/cards/cards/CardProxy.svelte";
   import Tarot from "./lib/cards/cards/Tarot.svelte";
 
   import { Label, Select } from "flowbite-svelte";
-  let selSupertype: string, selRarity: string, selSubtypes:string;
+  let selSupertype: string,
+    selRarity: string,
+    selSubtype: string,
+    selType: string;
 
   let supertypes = [
+    { value: "none", name: "none" },
     { value: "trainer", name: "trainer" },
     { value: "pokémon", name: "pokémon" },
   ];
 
   let subtypes = [
+    { value: "none", name: "none" },
     { value: "stage", name: "stage" },
     { value: "supporter", name: "supporter" },
     { value: "item", name: "item" },
     { value: "v-union", name: "v-union" },
-
   ];
 
   let rarities = [
+    { value: "none", name: "none" },
     { value: "amazing rare", name: "amazing rare" },
     { value: "rare holo", name: "rare holo" },
     { value: "rare holo cosmos", name: "rare holo cosmos" },
@@ -43,6 +48,20 @@
     { value: "trainer gallery rare holo", name: "trainer gallery rare holo" },
     { value: "rare holo v", name: "rare holo v" },
     { value: "rare holo vstar", name: "rare holo vstar" },
+  ];
+
+  let types = [
+    { value: "none", name: "none" },
+    { value: "water", name: "water" },
+    { value: "fire", name: "fire" },
+    { value: "grass", name: "grass" },
+    { value: "lightning", name: "lightning" },
+    { value: "psychic", name: "psychic" },
+    { value: "fighting", name: "fighting" },
+    { value: "darkness", name: "darkness" },
+    { value: "metal", name: "metal" },
+    { value: "dragon", name: "dragon" },
+    { value: "fairy", name: "fairy" },
   ];
 </script>
 
@@ -69,6 +88,15 @@
   </section> -->
 
   <section class="bg-gray-800 py-20">
+    types
+    <Label>
+      types
+      <Select class="mt-2" items={types} bind:value={selType} />
+    </Label>
+    <Label>
+      subtypes
+      <Select class="mt-2" items={subtypes} bind:value={selSubtype} />
+    </Label>
     <Label>
       supertypes
       <Select class="mt-2" items={supertypes} bind:value={selSupertype} />
@@ -77,24 +105,22 @@
       rarities
       <Select class="mt-2" items={rarities} bind:value={selRarity} />
     </Label>
-    <Label>
-      rarities
-      <Select class="mt-2" items={subtypes} bind:value={selSubtypes} />
-    </Label>
+
     <CardList>
-      <!-- // in base.css -->
+      <!-- types in base.css -->
       <Tarot
         id=""
         name=""
         img="./test/99-test.jpg"
         number="tg"
-        types="water" 
+        types={selType}
         supertype={selSupertype}
-        subtypes={selSubtypes}
+        subtypes={selSubtype}
         rarity={selRarity}
         foil="/test/99-foil.png"
         mask="/test/99-mask.png"
       />
+
       <!-- <Tarot
         id=""
         name=""
@@ -107,102 +133,6 @@
         foil="/test/99-foil.png"
         mask="/test/99-mask.png"
       /> -->
-      <!-- <Card
-      id=""
-      name=""
-      img="./test/card.png"
-      number="tg"
-      types="psychic"
-      supertype="pokémon"
-      subtypes="vmax fusion strike"
-      rarity="rare secret"
-      foil="/test/foil.webp"
-      mask="/test/mask.webp"
-    />
-    <Card
-      id=""
-      name=""
-      number=""
-      types="psychic"
-      supertype="pokémon"
-      subtypes="vmax fusion strike"
-      rarity="amazing rare"
-      img="./test/2card.png"
-      foil="/test/2foil2.webp"
-      mask="/test/2mask2.webp"
-    />
-    <Card
-      id=""
-      name=""
-      number=""
-      types="psychic"
-      supertype="pokémon"
-      subtypes="vmax fusion strike"
-      rarity="rare holo cosmos"
-      img="./test/2card.png"
-      foil="/test/2foil2.webp"
-      mask="/test/2mask2.webp"
-    />
-    <Card
-      id=""
-      name=""
-      number=""
-      types="psychic"
-      supertype="pokémon"
-      subtypes="vmax fusion strike"
-      rarity="rare secret"
-      img="./test/3card.png"
-      foil="/test/3foil3.webp"
-      mask="/test/3mask3.webp"
-    />
-    <Card
-      id=""
-      name=""
-      number=""
-      types="psychic"
-      supertype="pokémon"
-      subtypes="vmax fusion strike"
-      rarity="rare secret"
-      img="./test/4card.png"
-      foil="/test/4foil4.webp"
-      mask="/test/4mask4.webp"
-    />
-    <Card
-      id=""
-      name=""
-      number=""
-      types="psychic"
-      supertype="pokémon"
-      subtypes="vmax fusion strike"
-      rarity="rare secret"
-      img="./test/5card.png"
-      foil="/test/5foil5.webp"
-      mask="/test/5mask5.webp"
-    />
-    <Card
-      id=""
-      name=""
-      number=""
-      types="psychic"
-      supertype="pokémon"
-      subtypes="vmax fusion strike"
-      rarity="rare holo"
-      img="./test/6card.png"
-      foil="/test/6foil6.webp"
-      mask="/test/6mask6.webp"
-    />
-    <Card
-      id=""
-      name=""
-      number=""
-      types="psychic"
-      supertype="pokémon"
-      subtypes="vmax fusion strike"
-      rarity="rare secret"
-      img="./test/7card.png"
-      foil="/test/7foil7.webp"
-      mask="/test/7mask7.webp"
-    /> -->
     </CardList>
   </section>
 </main>

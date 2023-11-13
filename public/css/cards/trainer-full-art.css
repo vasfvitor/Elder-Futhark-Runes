@@ -5,10 +5,6 @@
 
 */
 
-
-
-
-
 /*
 
   SHINE LAYERS
@@ -16,39 +12,26 @@
 */
 
 .card[data-subtypes*="supporter"][data-rarity="rare ultra"] .card__shine {
-  
-  filter: brightness(calc((var(--pointer-from-center)*0.05) + .8)) contrast(1.75) saturate(1.2);
-
+  filter: brightness(calc((var(--pointer-from-center) * 0.05) + 0.8))
+    contrast(1.75) saturate(1.2);
 }
 
 .card[data-subtypes*="supporter"][data-rarity="rare ultra"] .card__shine:after {
-
-  filter: brightness(calc((var(--pointer-from-center)*.4) + .85)) contrast(2) saturate(.5);
-
+  filter: brightness(calc((var(--pointer-from-center) * 0.4) + 0.85))
+    contrast(2) saturate(0.5);
 }
 
-.card[data-subtypes*="supporter"][data-rarity="rare ultra"] .card__shine:before {
+.card[data-subtypes*="supporter"][data-rarity="rare ultra"]
+  .card__shine:before {
+  background-image: radial-gradient(
+    farthest-corner circle at var(--pointer-x) var(--pointer-y),
+    hsl(0, 0%, 100%) 0%,
+    hsla(0, 0%, 0%, 0) 80%
+  );
 
-  background-image: 
-    radial-gradient( 
-      farthest-corner circle at var(--pointer-x) var(--pointer-y), 
-      hsl(0, 0%, 100%) 0%, 
-      hsla(0, 0%, 0%, 0) 80% 
-    );
-  
   mix-blend-mode: screen;
   opacity: 0.5;
-  
 }
-
-
-
-
-
-
-
-
-
 
 /*
 
@@ -57,22 +40,11 @@
 */
 
 .card[data-rarity="rare ultra"][data-subtypes*="supporter"] .card__glare {
-
-  opacity: calc( var(--card-opacity) * .75 );
+  opacity: calc(var(--card-opacity) * 0.75);
   mix-blend-mode: multiply;
   filter: brightness(1.5) contrast(1.4) saturate(1);
   background-size: 170% 170%;
-
 }
-
-
-
-
-
-
-
-
-
 
 /*
 
@@ -80,14 +52,15 @@
 
 */
 
-.card:not(.masked)[data-subtypes*="supporter"][data-rarity="rare ultra"] .card__shine,
-.card:not(.masked)[data-subtypes*="supporter"][data-rarity="rare ultra"] .card__shine:after {
-
+.card:not(.masked)[data-subtypes*="supporter"][data-rarity="rare ultra"]
+  .card__shine,
+.card:not(.masked)[data-subtypes*="supporter"][data-rarity="rare ultra"]
+  .card__shine:after {
   --mask: none;
-  --foil: url("/img/trainerbg.png"); 
+  --foil: url("/img/trainerbg.png");
   --imgsize: 20%;
-  
-  background-blend-mode: color-burn, hue, hard-light;
-  filter: brightness(calc((var(--pointer-from-center)*0.05) + .6)) contrast(1.5) saturate(1.2);
 
+  background-blend-mode: color-burn, hue, hard-light;
+  filter: brightness(calc((var(--pointer-from-center) * 0.05) + 0.6))
+    contrast(1.5) saturate(1.2);
 }
