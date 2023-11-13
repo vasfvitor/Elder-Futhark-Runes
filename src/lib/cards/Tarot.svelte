@@ -1,9 +1,9 @@
 <script>
   import { spring } from "svelte/motion";
   import { onMount } from "svelte";
-  import { activeCard } from "../stores/activeCard.js";
-  import { orientation, resetBaseOrientation } from "../stores/orientation.js";
-  import { clamp, round, adjust } from "../helpers/Math.js";
+  import { activeCard } from "./stores/activeCard.js";
+  import { orientation, resetBaseOrientation } from "./stores/orientation.js";
+  import { clamp, round, adjust } from "./helpers/Math.js";
 
   // data / pokemon props
   export let id = "";
