@@ -1,13 +1,13 @@
 <script lang="ts">
   import Runas from "./lib/Runas.svelte";
+  import NewRunas from "./lib/NewRunas.svelte";
   import Toast from "flowbite-svelte/Toast.svelte";
   import Button from "flowbite-svelte/Button.svelte";
   import { Badge } from "flowbite-svelte";
   import { InfoCircleOutline, StarSolid } from "flowbite-svelte-icons";
 
   import CardList from "./lib/cards/Cards.svelte";
-  //import Card from "./lib/cards/cards/CardProxy.svelte";
-  import Tarot from "./lib/cards/cards/Tarot.svelte";
+  import Tarot from "./lib/cards/Tarot.svelte";
 
   import { Label, Select } from "flowbite-svelte";
   let selSupertype: string,
@@ -24,30 +24,29 @@
   let subtypes = [
     { value: "none", name: "none" },
     { value: "stage", name: "stage" },
+    { value: "v-union", name: "v-union" },
     { value: "supporter", name: "supporter" },
     { value: "item", name: "item" },
-    { value: "v-union", name: "v-union" },
   ];
 
   let rarities = [
     { value: "none", name: "none" },
     { value: "amazing rare", name: "amazing rare" },
-    { value: "rare holo", name: "rare holo" },
-    { value: "rare holo cosmos", name: "rare holo cosmos" },
-    { value: "reverse holo", name: "reverse holo" },
-    { value: "rare holo cosmos", name: "rare holo cosmos" },
     { value: "radiant rare", name: "radiant rare" },
-    { value: "rare rainbow alt", name: "rare rainbow alt" },
+    { value: "rare holo cosmos", name: "rare holo cosmos" },
+    { value: "rare holo vstar", name: "rare holo vstar" },
     { value: "rare holo vmax", name: "rare holo vmax" },
+    { value: "rare holo v", name: "rare holo v" },
+    { value: "rare holo", name: "rare holo" },
+    { value: "reverse holo", name: "reverse holo" },
+    { value: "rare rainbow alt", name: "rare rainbow alt" },
     { value: "rare rainbow", name: "rare rainbow" },
     { value: "rare secret", name: "rare secret" },
-    { value: "rare shiny", name: "rare shiny" },
-    { value: "rare shiny v", name: "rare shiny v" },
     { value: "rare shiny vmax", name: "rare shiny vmax" },
+    { value: "rare shiny v", name: "rare shiny v" },
+    { value: "rare shiny", name: "rare shiny" },
     { value: "rare ultra", name: "rare ultra" },
     { value: "trainer gallery rare holo", name: "trainer gallery rare holo" },
-    { value: "rare holo v", name: "rare holo v" },
-    { value: "rare holo vstar", name: "rare holo vstar" },
   ];
 
   let types = [
@@ -86,39 +85,74 @@
   <!-- <section class="container mx-auto min-h-[80vh] bg-white py-20 rounded">
     <Runas />
   </section> -->
+  <section class="container mx-auto min-h-[80vh] bg-white py-20 rounded">
+    <div class="w-fit mx-auto bg-white p-8 rounded">
+      types
+      <Label>
+        types
+        <Select class="mt-2" items={types} bind:value={selType} />
+      </Label>
+      <Label>
+        subtypes
+        <Select class="mt-2" items={subtypes} bind:value={selSubtype} />
+      </Label>
+      <Label>
+        supertypes
+        <Select class="mt-2" items={supertypes} bind:value={selSupertype} />
+      </Label>
+      <Label>
+        rarities
+        <Select class="mt-2" items={rarities} bind:value={selRarity} />
+      </Label>
+    </div>
+
+    <NewRunas {selType} {selSubtype} {selSupertype} {selRarity} />
+  </section>
 
   <section class="bg-gray-800 py-20">
-    types
-    <Label>
+    <div class="w-fit mx-auto bg-white p-8 rounded">
       types
-      <Select class="mt-2" items={types} bind:value={selType} />
-    </Label>
-    <Label>
-      subtypes
-      <Select class="mt-2" items={subtypes} bind:value={selSubtype} />
-    </Label>
-    <Label>
-      supertypes
-      <Select class="mt-2" items={supertypes} bind:value={selSupertype} />
-    </Label>
-    <Label>
-      rarities
-      <Select class="mt-2" items={rarities} bind:value={selRarity} />
-    </Label>
+      <Label>
+        types
+        <Select class="mt-2" items={types} bind:value={selType} />
+      </Label>
+      <Label>
+        subtypes
+        <Select class="mt-2" items={subtypes} bind:value={selSubtype} />
+      </Label>
+      <Label>
+        supertypes
+        <Select class="mt-2" items={supertypes} bind:value={selSupertype} />
+      </Label>
+      <Label>
+        rarities
+        <Select class="mt-2" items={rarities} bind:value={selRarity} />
+      </Label>
+    </div>
 
     <CardList>
       <!-- types in base.css -->
       <Tarot
         id=""
         name=""
-        img="./test/99-test.jpg"
+        img="./test/fehu_card.png"
         number="tg"
         types={selType}
         supertype={selSupertype}
         subtypes={selSubtype}
         rarity={selRarity}
-        foil="/test/99-foil.png"
-        mask="/test/99-mask.png"
+        foil="/test/fehu_foil.png"
+        mask="/test/fehu_mask.png"
+      />
+      <Tarot
+        id=""
+        name=""
+        img="./test/fehu_card.png"
+        number="tg"
+        types={selType}
+        supertype={selSupertype}
+        subtypes={selSubtype}
+        rarity={selRarity}
       />
 
       <!-- <Tarot

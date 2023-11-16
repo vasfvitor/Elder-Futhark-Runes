@@ -5,7 +5,14 @@
   import { orientation, resetBaseOrientation } from "./stores/orientation.js";
   import { clamp, round, adjust } from "./helpers/Math.js";
 
+  //
+  /*
+  24 cartas
+  3 aett
 
+  
+
+  */
   export let id = "";
   export let name = "";
   export let number = "";
@@ -15,7 +22,9 @@
   export let supertype = "pokémon";
   export let rarity = "common";
 
+  // image props
   export let img = "";
+
   export let foil = "";
   export let mask = "";
 
@@ -215,7 +224,7 @@
   }
 
   let foilStyles = ``;
-  
+
   const staticStyles = `
     --seedx: ${randomSeed.x};
     --seedy: ${randomSeed.y};
