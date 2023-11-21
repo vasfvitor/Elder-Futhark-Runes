@@ -91,7 +91,7 @@ export const RUNAS: Array<Card> = [
     nome: "HAGALAZ",
     fonetico: "H",
     polaridade: "",
-    ideograma: "ᚺ ᚻ",
+    ideograma: "ᚻ",
 
   },
   {
@@ -158,7 +158,7 @@ export const RUNAS: Array<Card> = [
     nome: "SOWILO",
     fonetico: "S",
     polaridade: "♂",
-    ideograma: "ᛊ ᛋ",
+    ideograma: "ᛊ",
 
   },
   {
