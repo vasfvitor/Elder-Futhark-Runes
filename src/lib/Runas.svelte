@@ -1,7 +1,7 @@
 <script lang="ts">
   import Atropos from "atropos";
   import "atropos/css";
-  // import { Runics } from "./Runas";
+  // import { RUNAS } from "./Runas";
   // import { Cards } from "./scripts/Cartas";
   import { RUNAS } from "./scripts/Cartas";
   import { typewriter } from "./scripts/transition";
@@ -10,10 +10,6 @@
   import PrimeiroAett from "./aett/PrimeiroAett.svelte";
   import SegundoAett from "./aett/SegundoAett.svelte";
   import TerceiroAett from "./aett/TerceiroAett.svelte";
-
-  // const Runics = Cards;
-
-  const Runics = RUNAS;
 
   let atropo: any;
   let over = false;
@@ -69,7 +65,7 @@
   }
 
   function showNext() {
-    if (idx < Runics.length - 1) {
+    if (idx < RUNAS.length - 1) {
       toRunic();
       idx++;
     }
@@ -103,36 +99,36 @@
       shadow
       color="purpleToPink"
       on:click={showNext}
-      disabled={idx === Runics.length - 1}
+      disabled={idx === RUNAS.length - 1}
       >PRÓXIMA <AngleRightOutline class="w-3 h-3 ml-2" /></GradientButton
     >
   </ButtonGroup>
 </div>
 
 <div class="  justify-center flex flex-col-reverse w-full">
-  {#if idx >= 0 && idx < Runics.length}
+  {#if idx >= 0 && idx < RUNAS.length}
     {#key idx}
       <div
         class:runic-moon={runic}
         class="mt-4 text-center text-white norse text-2xl"
       >
         <span class=" text-3xl runic"
-          >{`${Runics[idx].fonetico.toLocaleLowerCase()}`}</span
+          >{`${RUNAS[idx].fonetico.toLocaleLowerCase()}`}</span
         >
         <span class=" text-3xl runic-moon"
-          >{`${Runics[idx].fonetico.toLocaleLowerCase()}`}</span
+          >{`${RUNAS[idx].fonetico.toLocaleLowerCase()}`}</span
         >
         <p in:typewriter={{ speed: 5 }}>
-          {`Nome: ${Runics[idx].nome}`}
+          {`Nome: ${RUNAS[idx].nome}`}
         </p>
         <p in:typewriter={{ speed: 5 }}>
-          {`Nome:${Runics[idx].id}`}
+          {`Nome:${RUNAS[idx].id}`}
         </p>
         <!-- <p in:typewriter={{ speed: 5 }}>
-          {`Nome:${Runics[idx].significado}`}
+          {`Nome:${RUNAS[idx].significado}`}
         </p>
         <p in:typewriter={{ speed: 5 }}>
-          {`Nome:${Runics[idx].ideografia} - ${Runics[idx].ideograma}`}
+          {`Nome:${RUNAS[idx].ideografia} - ${RUNAS[idx].ideograma}`}
         </p> -->
       </div>
     {/key}
@@ -144,14 +140,14 @@
       }, 1000);
     </script>
   {/if}
-  {#if idx >= 0 && idx < Runics.length}
+  {#if idx >= 0 && idx < RUNAS.length}
     <div class="h-[26.25rem] w-full">
-      {#if Runics[idx].aett == 1}
-        <PrimeiroAett {idx} {over} runa={Runics[idx]} />
-      {:else if Runics[idx].aett == 2}
-        <SegundoAett {idx} {over} runa={Runics[idx]} />
+      {#if RUNAS[idx].aett == 1}
+        <PrimeiroAett {idx} {over} runa={RUNAS[idx]} />
+      {:else if RUNAS[idx].aett == 2}
+        <SegundoAett {idx} {over} runa={RUNAS[idx]} />
       {:else}
-        <TerceiroAett {idx} {over} runa={Runics[idx]} />
+        <TerceiroAett {idx} {over} runa={RUNAS[idx]} />
       {/if}
     </div>
   {/if}
